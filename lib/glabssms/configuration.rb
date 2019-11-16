@@ -21,8 +21,8 @@ module Glabssms
           attribute_value = instance_variable_get("@#{attribute}")
           if attribute_value.nil? || attribute_value.to_s.empty?
             raise ConfigurationError.new(
-                    "Glabssms::Configuration.#{attribute.to_s} needs to be set"
-                  )
+              "Glabssms::Configuration.#{attribute} needs to be set"
+            )
           end
           attribute_value
         end
@@ -45,7 +45,7 @@ module Glabssms
     def initialize(options = {})
       WRITABLE_ATTRIBUTES.each do |attr|
         instance_variable_set "@#{attr}",
-                              options[attr] || Glabssms.configuration.send(attr)
+          options[attr] || Glabssms.configuration.send(attr)
       end
     end
 
@@ -66,8 +66,8 @@ module Glabssms
     def assert_has_keys
       if app_id.nil? || app_secret.nil? || cross_telco_short_code.nil? || short_code.nil?
         raise ConfigurationError.new(
-                'Glabssms::Configuration app_id, app_secret, cross_telco_short_code, short_code and are required.'
-              )
+          'Glabssms::Configuration app_id, app_secret, cross_telco_short_code, short_code and are required.'
+        )
       end
     end
   end

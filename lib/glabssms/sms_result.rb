@@ -1,4 +1,8 @@
+# frozen_string_literal: true
+
 module Glabssms
+  # This class is used as a response object when we successfully send an SMS to
+  # a subscriber
   class SmsResult
     include BaseModule
 
@@ -16,7 +20,7 @@ module Glabssms
     class << self
       protected :new
       def _new(*args)
-        self.new(*args)
+        new(*args)
       end
     end
 

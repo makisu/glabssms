@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bundler/setup'
 require 'glabssms'
 require 'active_support/core_ext/hash/indifferent_access'
