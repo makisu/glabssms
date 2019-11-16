@@ -28,11 +28,13 @@ module Glabssms
     end
 
     describe '#get_token' do
-      Glabssms.configure do |c|
-        c.app_id = CONFIG[:app_id]
-        c.app_secret = CONFIG[:app_secret]
-        c.cross_telco_short_code = CONFIG[:cross_telco_short_code]
-        c.short_code = CONFIG[:short_code]
+      before do
+        Glabssms.configure do |c|
+          c.app_id = CONFIG[:app_id]
+          c.app_secret = CONFIG[:app_secret]
+          c.cross_telco_short_code = CONFIG[:cross_telco_short_code]
+          c.short_code = CONFIG[:short_code]
+        end
       end
       it 'returns a TokenResult' do
         code = CONFIG[:code]
@@ -51,11 +53,13 @@ module Glabssms
     end
 
     describe '#send_sms' do
-      Glabssms.configure do |c|
-        c.app_id = CONFIG[:app_id]
-        c.app_secret = CONFIG[:app_secret]
-        c.cross_telco_short_code = CONFIG[:cross_telco_short_code]
-        c.short_code = CONFIG[:short_code]
+      before do
+        Glabssms.configure do |c|
+          c.app_id = CONFIG[:app_id]
+          c.app_secret = CONFIG[:app_secret]
+          c.cross_telco_short_code = CONFIG[:cross_telco_short_code]
+          c.short_code = CONFIG[:short_code]
+        end
       end
       it 'returns an SmsResult' do
         number = '09171234567'
