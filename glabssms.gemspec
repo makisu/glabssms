@@ -16,8 +16,6 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "https://rubygems.org"
-
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/makisu/glabssms_ruby"
     spec.metadata["changelog_uri"] = "https://github.com/makisu/glabssms_ruby/blob/master/CHANGELOG.md"
@@ -35,7 +33,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.17"
+  spec.add_dependency "activesupport"
+  spec.add_dependency "gem_config"
+
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "webmock"
 end

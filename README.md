@@ -1,4 +1,6 @@
 # Globe Labs SMS Ruby Library
+[![Build
+Status](https://travis-ci.org/makisu/glabssms.svg?branch=master)](https://travis-ci.com/makisu/glabssms)
 
 Send SMS using [Globe Labs](http://www.globelabs.com.ph/developer/api) in Ruby.
 
@@ -48,25 +50,56 @@ client = Glabssms::Client.new(
 
 ## Fetching Access Token after Subscriber Opt-In
 
+You need to have the user go through the Subscriber Consent Workflow. They can
+either [Opt-In via
+SMS](http://www.globelabs.com.ph/docs/#getting-started-opt-in-via-sms) or
+[Opt-In via
+Webform](http://www.globelabs.com.ph/docs/#getting-started-opt-in-via-webform).
+Globe Labs will then post the `code` to your Redirect URL. You can then use the
+`code` you receive below.
+
 ```ruby
 result = client.get_token(
   code: code_from_opt_in
 )
 
 # result will be an instance of TokenResult
-token_from_subscriber_opt_in = result.token
-subscriber_number = result.number
+result.success?
+=> true
+token_from_subscriber_opt_in = result.access_token
+subscriber_number = result.subscriber_number
 ```
 
 ## Sending SMS
 
 ```ruby
 result = client.send_sms(
-  number: subscriber_number, # Can be in the form +639171234567 or 09171234567
+  number: subscriber_number, # Can be in the form +639171234567 or 09171234567 or 9171234567
   message: 'max_160_character_string',
   token: token_from_subscriber_opt_in
 )
+
+result.success?
+=> true
+result.message
+=> 'max_160_character_string'
+result.number
+=> '9171234567'
+result.sender_address
+=> '0000'
 ```
+
+## Running the test suite
+
+1. Install the latest Ruby
+
+2. Copy `config.yml.sample` to `config.yml` then run:
+```
+bundle exec rspec spec
+```
+
+3. You can replace values in `config.yml` with values from your Globe Labs API
+   dashboard
 
 ## Development
 
