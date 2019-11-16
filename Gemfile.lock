@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    glabssms (0.1.0)
+    glabssms (1.0.0)
       activesupport
       gem_config
 
