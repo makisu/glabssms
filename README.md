@@ -1,4 +1,6 @@
 # Globe Labs SMS Ruby Library
+[![Build
+Status](https://travis-ci.org/makisu/glabssms.svg?branch=master)](https://travis-ci.com/makisu/glabssms)
 
 Send SMS using [Globe Labs](http://www.globelabs.com.ph/developer/api) in Ruby.
 
