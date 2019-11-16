@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/0000/requests?access_token=xxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxx-x
+    body:
+      encoding: UTF-8
+      string: '{"outboundSMSMessageRequest":{"senderAddress":"0000","outboundSMSTextMessage":{"message":"This
+        is a test"},"address":"09171234567"}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 16 Nov 2019 19:36:08 GMT
+      Etag:
+      - W/"2bd-Eptf0EiTtWBrS9W3vIimyA"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '701'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "outboundSMSMessageRequest": {
+            "address": "9171234567",
+            "deliveryInfoList": {
+              "deliveryInfo": [],
+              "resourceURL": "https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/0000/requests?access_token=xxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxx-x"
+            },
+            "senderAddress": "0000",
+            "outboundSMSTextMessage": {
+              "message": "This is a test"
+            },
+            "receiptRequest": {
+              "notifyURL": "https://example.com/glabs",
+              "callbackData": null,
+              "senderName": null
+            },
+            "resourceURL": "https://devapi.globelabs.com.ph/smsmessaging/v1/outbound/0000/requests?access_token=xxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxx-x",
+            "numberOfMessagesInThisBatch": 1
+          }
+        }
+    http_version: 
+  recorded_at: Sat, 16 Nov 2019 19:36:04 GMT
+recorded_with: VCR 5.0.0
