@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "glabssms/version"
@@ -7,18 +6,16 @@ Gem::Specification.new do |spec|
   spec.name          = "glabssms"
   spec.version       = Glabssms::VERSION
   spec.authors       = ["Xavi Ablaza"]
-  spec.email         = ["xlablaza@gmail.com"]
+  spec.email         = ["dev@makisu.co"]
 
-  spec.summary       = %q{Send SMS using Globe Labs in Ruby}
-  spec.homepage      = "https://github.com/makisu/glabssms_ruby"
+  spec.summary       = %q{Send SMS using Globe Labs in Ruby.}
+  spec.homepage      = "https://github.com/makisu/glabssms"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/makisu/glabssms_ruby"
-    spec.metadata["changelog_uri"] = "https://github.com/makisu/glabssms_ruby/blob/master/CHANGELOG.md"
+    spec.metadata["source_code_uri"] = "https://github.com/makisu/glabssms"
+    spec.metadata["changelog_uri"] = "https://github.com/makisu/glabssms/blob/master/CHANGELOG.md"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
