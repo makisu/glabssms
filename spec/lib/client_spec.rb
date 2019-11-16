@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 module Glabssms
-  RSpec.describe Client, vcr: { record: :once, match_requests_on: %i[:uri :method] } do
+  RSpec.describe Client, vcr: { record: :once, match_requests_on: [:uri, :method] } do
     describe '.new' do
       before do
         Glabssms.configure do |c|
