@@ -101,6 +101,10 @@ bundle exec rspec spec
 3. You can replace values in `config.yml` with values from your Globe Labs API
    dashboard
 
+## Branch Organization
+- `master` is the development branch
+- `rubygems` contains code for the latest version of this gem
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
